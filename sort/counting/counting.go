@@ -1,17 +1,11 @@
-package main
+package counting
 
 import "log"
-
-func main() {
-	arr := []int{2, 5, 3, 0, 2, 3, 0, 3}
-
-	log.Printf("final is %+v", counting(arr))
-}
 
 // 计数排序
 // 将原始数据A划分到统计数组B,B的下标是一个统计指标,值是个数;将B的元素各个相加结果存在C
 // 结合AB处理到结果集B(从后往前遍历原始数组,从C中匹配对应下标的值,获得的值就是排序后的index)
-func counting(s []int) []int {
+func Counting(s []int) []int {
 	if len(s) <= 1 {
 		return s
 	}

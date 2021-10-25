@@ -1,12 +1,6 @@
-package main
+package quick
 
 import "log"
-
-func main() {
-	arr := []int{3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 46, 4, 19, 50, 48}
-	quick(arr)
-	log.Printf("final is %+v", arr)
-}
 
 // 快速排序
 // 选定pivot中心轴
@@ -19,14 +13,14 @@ func main() {
 // 情况2 pivot在头
 // 情况3 pivot在尾
 
-func quick(s []int) {
+func Quick(s []int) {
 	l := len(s)
 	if l <= 1 {
 		return
 	}
 	mid := partition(s)
-	quick(s[:mid])
-	quick(s[mid+1:])
+	Quick(s[:mid])
+	Quick(s[mid+1:])
 }
 
 // 分区函数可以优化,优化pivot的选取方式,尽可能保证pivot在中间

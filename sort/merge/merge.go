@@ -1,14 +1,6 @@
-package main
+package merge
 
-import (
-	"log"
-)
-
-func main() {
-	arr := []int{5, 2, 3, 1, 6}
-	arr = mergeSort(arr)
-	log.Printf("result is %+v", arr)
-}
+import "log"
 
 //  归并排序
 //  将排序元素最2分到最小单位，将最小单位进行排序，
@@ -19,7 +11,7 @@ func main() {
 // 临时内存空间最大也不会超过 n 个数据的大小，所以空间复杂度是 O(n)。
 
 // 打散数组
-func mergeSort(s []int) []int {
+func MergeSort(s []int) []int {
 	log.Printf("s is %+v", s)
 	length := len(s)
 	// 终止条件
@@ -29,8 +21,8 @@ func mergeSort(s []int) []int {
 
 	mid := length / 2
 	log.Printf("mid is %+v", mid)
-	arr1 := mergeSort(s[:mid])
-	arr2 := mergeSort(s[mid:length])
+	arr1 := MergeSort(s[:mid])
+	arr2 := MergeSort(s[mid:length])
 	return merge(arr1, arr2)
 }
 

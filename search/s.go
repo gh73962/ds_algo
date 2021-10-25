@@ -1,14 +1,4 @@
-package main
-
-import "log"
-
-func main() {
-	s := []int{1, 2, 3, 4, 5, 5, 5, 10, 12, 15, 16, 23, 62, 122, 15123}
-	pos := firstBigThan(s, 6)
-	log.Printf("pos is %d\n\n", pos)
-	// pos2 := recursion(s, 62)
-	// log.Printf("pos2 is %d", pos2)
-}
+package search
 
 // 二分查找
 // 二分查找针对的是一个有序的数据集合，查找思想有点类似分治思想。

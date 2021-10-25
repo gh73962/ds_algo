@@ -1,18 +1,9 @@
-package main
-
-import "log"
-
-func main() {
-	arr := []int{5, 1, 4, 2, 6, 3}
-	log.Printf("origin arr is %+v", arr)
-	arr = insertion(arr)
-	log.Printf("arr is %+v", arr)
-}
+package insertion
 
 // 原地排序
 // 稳定
 // o(n2)
-func insertion(s []int) []int {
+func Insertion(s []int) []int {
 	l := len(s)
 	if l < 1 {
 		return s

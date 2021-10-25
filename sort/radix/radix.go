@@ -1,14 +1,9 @@
-package main
+package radix
 
 import (
 	"log"
 	"strconv"
 )
-
-func main() {
-	arr := []int{73, 22, 93, 43, 56, 55, 28, 65, 39, 81}
-	log.Printf("final is %+v", radixInt(arr))
-}
 
 // 基数排序
 // 例如排数字，则旭需有0-9 10个桶，（MSD最高位优先法和最低位优先LSD）按位分配到桶，再按桶序取出来，再进行下一位
