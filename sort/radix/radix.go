@@ -10,7 +10,7 @@ import (
 // 若是字符串,则是26个桶
 // LSD的基数排序适用于位数小的数列，如果位数多的话，使用MSD的效率会比较好。
 // n个记录，d个关键码，关键码的取值范围为radix, O(d(n+radix)), radix是常数则为o(n)
-func radixInt(s []int) []int {
+func Int(s []int) []int {
 	return msd(s, maxDigit(s))
 }
 
