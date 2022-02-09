@@ -8,14 +8,19 @@ import "log"
 // delete node which last n 删除链表倒数第 n 个结点
 // get mid node of list 求链表的中间结点
 
+type SinglyLinkedListNode struct {
+	Next  *SinglyLinkedListNode
+	Value int
+}
+
 type SinglyLinkedList struct {
-	Head   *Node
+	Head   *SinglyLinkedListNode
 	length int
 }
 
 func NewSingle() *SinglyLinkedList {
 	return &SinglyLinkedList{
-		Head: &Node{
+		Head: &SinglyLinkedListNode{
 			Next:  nil,
 			Value: 0,
 		},
@@ -29,14 +34,14 @@ func (s *SinglyLinkedList) Len() int {
 
 func (s *SinglyLinkedList) InsertHead(value int) {
 	s.length++
-	temp := Node{
+	temp := SinglyLinkedListNode{
 		Value: value,
 		Next:  s.Head.Next,
 	}
 	s.Head.Next = &temp
 }
 
-func (s *SinglyLinkedList) Middle() *Node {
+func (s *SinglyLinkedList) Middle() *SinglyLinkedListNode {
 	return nil
 }
 
