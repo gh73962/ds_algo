@@ -15,9 +15,25 @@ func TestBubble(t *testing.T) {
 		want []int
 	}{
 		{
-			name: "",
-			args: args{[]int{8, 5, 2, 3, 1, 6, 4, 9, 7, 5}},
-			want: []int{1, 2, 3, 4, 5, 6, 7, 8, 9},
+			name: "test1",
+			args: args{
+				source: []int{5, 2, 1, 3, 4},
+			},
+			want: []int{1, 2, 3, 4, 5},
+		},
+		{
+			name: "test2",
+			args: args{
+				source: []int{},
+			},
+			want: []int{},
+		},
+		{
+			name: "test2",
+			args: args{
+				source: []int{1},
+			},
+			want: []int{1},
 		},
 	}
 	for _, tt := range tests {
