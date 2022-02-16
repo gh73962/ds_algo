@@ -18,26 +18,62 @@ package leetcode
 // minStack.getMin();   --> 返回 -2.
 
 type MinStack struct {
+	Stack  []int
+	min    int
+	length int
 }
 
 func Constructor() MinStack {
-
+	return MinStack{}
 }
 
 func (this *MinStack) Push(val int) {
-
+	if this.length == 0 {
+		this.min = val
+	}
+	this.Stack = append(this.Stack, val)
+	this.length++
+	if val < this.min {
+		this.min = val
+	}
 }
 
 func (this *MinStack) Pop() {
-
+	switch this.length {
+	case 0:
+		return
+	case 1:
+		this.Stack = nil
+		this.length = 0
+		this.min = 0
+	default:
+		top := this.Top()
+		this.Stack = this.Stack[:this.length-1]
+		if top == this.min {
+			for i, v := range this.Stack {
+				if i == 0 {
+					this.min = v
+				}
+				if this.min > v {
+					this.min = v
+				}
+			}
+		}
+		this.length--
+	}
 }
 
 func (this *MinStack) Top() int {
-
+	switch this.length {
+	case 0:
+		return 0
+	default:
+		return this.Stack[this.length-1]
+	}
 }
 
 func (this *MinStack) GetMin() int {
-
+	return this.min
 }
 
 /**
