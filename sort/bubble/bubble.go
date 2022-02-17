@@ -1,7 +1,7 @@
 package bubble
 
 // 比较相邻的元素,将小的swap o(n^2) 稳定
-func Bubble(source []int) []int {
+func Sort(source []int) []int {
 	length := len(source)
 	if length <= 1 {
 		return source
